@@ -1,0 +1,19 @@
+[package]
+name = "cloudflaredyndns"
+version = "1.0.0"
+edition = "2024"
+
+[dependencies]
+tokio = { version = "1.41", features = ["full"] }
+reqwest = { version = "0.12", features = ["json", "rustls-tls"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+futures = "0.3.31"
+
+[package.metadata.deb]
+maintainer = "Samoxiaki <samoxiaki@yahoo.com>"
+section = "net"
+priority = "optional"
+assets = [
+	["target/release/cloudflaredyndns", "/usr/bin/", "755"],
+]
