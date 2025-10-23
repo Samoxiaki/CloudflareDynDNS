@@ -1,6 +1,7 @@
 [package]
 name = "cloudflaredyndns"
-version = "1.0.0"
+description = "Cloudflare Dynamic DNS Updater"
+version = "1.0.1"
 edition = "2024"
 
 [dependencies]
@@ -12,8 +13,15 @@ futures = "0.3.31"
 
 [package.metadata.deb]
 maintainer = "Samoxiaki <samoxiaki@yahoo.com>"
+
+license-file = "../LICENSE"
 section = "net"
 priority = "optional"
 assets = [
 	["target/release/cloudflaredyndns", "/usr/bin/", "755"],
+]
+depends = [
+	"libssl-dev",
+	"pkg-config",
+	"dpkg-shlibdeps"
 ]
