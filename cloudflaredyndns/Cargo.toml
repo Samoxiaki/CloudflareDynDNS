@@ -22,6 +22,5 @@ assets = [
 ]
 depends = [
 	"libssl-dev",
-	"pkg-config",
-	"dpkg-shlibdeps"
+	"pkg-config"
 ]
